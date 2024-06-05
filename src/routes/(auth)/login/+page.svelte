@@ -1,5 +1,4 @@
 <script>
-	import icon from '../../../lib/img/icon.png';
 	import Alert from '../../../lib/components/Alert.svelte';
 
 	export let form;
@@ -12,13 +11,9 @@
 		<Alert message={response} color="danger" icon="x-circle" />
 	{/if}
 	<div
-		class="outer position-absolute top-50 start-50 translate-middle border p-5 bg-secondary-subtle opacity-75"
+		class="outer ms-auto d-flex align-items-center justify-content-center bg-secondary-subtle opacity-75"
 	>
-		<div class="icon d-flex justify-content-center align-items-center mb-3">
-			<img src={icon} alt="" />
-			<!-- <h3 class="ms-2">MOMA</h3> -->
-		</div>
-		<form method="POST">
+		<form method="POST" class="w-75">
 			<div class="input-group mb-1">
 				<span class="input-group-text text-light"><i class="bi-person-circle" /></span>
 				<div class="form-floating">
@@ -46,7 +41,6 @@
 				</div>
 			</div>
 			<div class="mt-3 d-flex justify-content-center">
-				<button class="btn btn-outline-secondary w-50" type="reset">Reset</button>
 				<button class="btn btn-login w-50 text-light" type="submit">Login</button>
 			</div>
 		</form>
@@ -60,34 +54,24 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100vh;
-		opacity: 0.8;
+		opacity: 0.95;
 	}
 	.outer {
 		width: 30%;
-		border-radius: 50px;
+		height: 100vh;
 	}
 	button,
 	input,
 	span {
 		border-radius: 0px;
 	}
-	img {
-		height: 80px;
-	}
-	/* h3 {
-		font-weight: 700;
-		font-size: 50px;
-	} */
-	.icon {
-		margin-top: -12px;
-	}
 	.btn-login {
-		background-color: #43a6a3;
+		background-color: #22223b;
 	}
 	.btn-login:hover {
-		background-color: #43a6a3df;
+		background-color: #22223bdf;
 	}
 	span {
-		background-color: #43a6a3;
+		background-color: #22223b;
 	}
 </style>
