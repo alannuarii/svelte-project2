@@ -7,7 +7,7 @@
 </script>
 
 <div class="d-flex justify-content-evenly mt-3">
-	<h2>REGISTERED USERS LIST</h2>
+	<h2>USERS LIST</h2>
 	<a href="/register" class="btn btn-primary register mb-3">Register</a>
 </div>
 <div class="card px-4 pt-4 pb-2 rounded-4 shadow">
