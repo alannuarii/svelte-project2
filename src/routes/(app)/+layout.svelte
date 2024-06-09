@@ -1,5 +1,7 @@
 <script>
 	import Header from '../../lib/components/Header.svelte';
+
+	export let data
 </script>
 
 <svelte:head>
@@ -9,7 +11,7 @@
 
 <main class="position-relative">
 	<div class="header position-absolute top-0 start-50 translate-middle-x">
-		<Header />
+		<Header name={data.token.name} />
 	</div>
 	<div class="content container">
 		<div class="row justify-content-center">

@@ -3,6 +3,8 @@
 
 	export let form;
 
+	console.log(form)
+
 	const response = form ? form.message : '';
 </script>
 

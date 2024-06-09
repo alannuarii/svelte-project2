@@ -1,5 +1,6 @@
 import { API_AUTH } from '$env/static/private';
 import { redirect } from '@sveltejs/kit';
+import { jwtDecode } from 'jwt-decode';
 
 export const actions = {
     default: async ({ request, cookies }) => {
@@ -15,12 +16,16 @@ export const actions = {
         });
 
         if (!res.ok) {
-            return { error: 'Login gagal. Silakan coba lagi.' };
+            return {
+                "message": "Login failed",
+                "access_token": null,
+            };
         }
 
         const result = await res.json();
+        const accessToken = jwtDecode(result.access_token)
 
-        if (result.access_token) {
+        if (result.access_token && accessToken.role === '99') {
             cookies.set('accessToken', result.access_token, {
                 path: '/',
                 sameSite: 'strict',
@@ -29,8 +34,11 @@ export const actions = {
                 maxAge: 60 * 60 * 24 // 1 hari
             });
             throw redirect(302, '/');
+        } else {
+            return {
+                "message": "Login failed",
+                "access_token": null,
+            };
         }
-
-        return result;
     }
 };
