@@ -38,6 +38,7 @@
 		font-size: 15px;
 		border-radius: 10px;
 		font-weight: 600;
+		z-index: 9999;
 	}
 	i{
 		font-size: 40px;
